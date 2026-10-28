@@ -269,5 +269,230 @@
             alert(message);
         }
     </script>
+<div style="max-width: 400px; margin: 20px auto; padding: 20px; border: 1px solid #ccc; border-radius: 8px; font-family: sans-serif;">
+    <h3>Оформить заказ в Black Shine</h3>
+    <form id="orderForm">
+        <label style="display:block; margin-bottom:5px;">Ваше имя:</label>
+        <input type="text" id="name" required style="width:100%; padding:8px; margin-bottom:15px; box-sizing:border-box;">
+
+        <label style="display:block; margin-bottom:5px;">Номер телефона:</label>
+        <input type="tel" id="phone" required style="width:100%; padding:8px; margin-bottom:15px; box-sizing:border-box;">
+
+        <label style="display:block; margin-bottom:5px;">Что хотите заказать:</label>
+        <textarea id="product" required style="width:100%; padding:8px; margin-bottom:15px; box-sizing:border-box; height:8px0px;"></textarea>
+
+        <button type="submit" style="width:100%; padding:10px; background:#000; color:#fff; border:none; border-radius:4px; cursor:pointer;">Отправить заказ</button>
+    </form>
+    <p id="statusMessage" style="margin-top:15px; font-weight:bold; color:green; display:none;"></p>
+</div>
+
+<script>
+document.getElementById('orderForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    // НАСТРОЙКА: Вставь свои данные сюда внутри кавычек
+    const TELEGRAM_TOKEN = 'СЮДА_ВСТАВЬ_ТОКЕН_ОТ_BOTFATHER';
+    const CHAT_ID = 'СЮДА_ВСТАВЬ_ТВОЙ_ID_ИЗ_ШАГА_1';
+
+    const name = document.getElementById('name').value;
+    const phone = document.getElementById('phone').value;
+    const product = document.getElementById('product').value;
+
+    // Формируем красивый текст сообщения для админа
+    const text = `🛍 Новый заказ в Black Shine!\n\n👤 Имя: ${name}\n📞 Телефон: ${phone}\n📦 Заказ: ${product}`;
+
+    // Отправляем запрос в Telegram API
+    const url = `https://telegram.org{TELEGRAM_TOKEN}/sendMessage`;
+    
+    fetch(url, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+            chat_id: CHAT_ID,
+            text: text
+        })
+    })
+    .then(response => {
+        if (response.ok) {
+            const status = document.getElementById('statusMessage');
+            status.textContent = 'Спасибо! Заказ успешно отправлен.';
+            status.style.display = 'block';
+            document.getElementById('orderForm').reset();
+        } else {
+            alert('Ошибка при отправке заказа. Проверьте токен или ID.');
+        }
+    })
+    .catch(error => {
+        console.error('Ошибка:', error);
+        alert('Произошла ошибка сети.');
+    });
+});
+</script>
+<div style="max-width: 400px; margin: 20px auto; padding: 20px; border: 1px solid #ccc; border-radius: 8px; font-family: sans-serif;">
+    <h3>Оформить заказ в Black Shine</h3>
+    <form id="orderForm">
+        <label style="display:block; margin-bottom:5px;">Ваше имя:</label>
+        <input type="text" id="name" required style="width:100%; padding:8px; margin-bottom:15px; box-sizing:border-box;">
+
+        <label style="display:block; margin-bottom:5px;">Номер телефона:</label>
+        <input type="tel" id="phone" required style="width:100%; padding:8px; margin-bottom:15px; box-sizing:border-box;">
+
+        <label style="display:block; margin-bottom:5px;">Что хотите заказать:</label>
+        <textarea id="product" required style="width:100%; padding:8px; margin-bottom:15px; box-sizing:border-box; height:8px0px;"></textarea>
+
+        <button type="submit" style="width:100%; padding:10px; background:#000; color:#fff; border:none; border-radius:4px; cursor:pointer;">Отправить заказ</button>
+    </form>
+    <p id="statusMessage" style="margin-top:15px; font-weight:bold; color:green; display:none;"></p>
+</div>
+
+<script>
+document.getElementById('orderForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    // НАСТРОЙКА: Вставь свои данные сюда внутри кавычек
+    const TELEGRAM_TOKEN = 'СЮДА_ВСТАВЬ_ТОКЕН_ОТ_BOTFATHER';
+    const CHAT_ID = 'СЮДА_ВСТАВЬ_ТВОЙ_ID_ИЗ_ШАГА_1';
+
+    const name = document.getElementById('name').value;
+    const phone = document.getElementById('phone').value;
+    const product = document.getElementById('product').value;
+
+    // Формируем красивый текст сообщения для админа
+    const text = `🛍 Новый заказ в Black Shine!\n\n👤 Имя: ${name}\n📞 Телефон: ${phone}\n📦 Заказ: ${product}`;
+
+    // Отправляем запрос в Telegram API
+    const url = `https://telegram.org{TELEGRAM_TOKEN}/sendMessage`;
+    
+    fetch(url, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+            chat_id: CHAT_ID,
+            text: text
+        })
+    })
+    .then(response => {
+        if (response.ok) {
+            const status = document.getElementById('statusMessage');
+            status.textContent = 'Спасибо! Заказ успешно отправлен.';
+            status.style.display = 'block';
+            document.getElementById('orderForm').reset();
+        } else {
+            alert('Ошибка при отправке заказа. Проверьте токен или ID.');
+        }
+    })
+    .catch(error => {
+        console.error('Ошибка:', error);
+        alert('Произошла ошибка сети.');
+    });
+});
+</script>
+<div style="max-width: 400px; margin: 20px auto; padding: 20px; border: 1px solid #ccc; border-radius: 8px; font-family: sans-serif;">
+    <h3>Оформить заказ в Black Shine</h3>
+    <form id="orderForm">
+        <label style="display:block; margin-bottom:5px;">Ваше имя:</label>
+        <input type="text" id="name" required style="width:100%; padding:8px; margin-bottom:15px; box-sizing:border-box;">
+
+        <label style="display:block; margin-bottom:5px;">Номер телефона:</label>
+        <input type="tel" id="phone" required style="width:100%; padding:8px; margin-bottom:15px; box-sizing:border-box;">
+
+        <label style="display:block; margin-bottom:5px;">Что хотите заказать:</label>
+        <textarea id="product" required style="width:100%; padding:8px; margin-bottom:15px; box-sizing:border-box; height:8px0px;"></textarea>
+
+        <button type="submit" style="width:100%; padding:10px; background:#000; color:#fff; border:none; border-radius:4px; cursor:pointer;">Отправить заказ</button>
+    </form>
+    <p id="statusMessage" style="margin-top:15px; font-weight:bold; color:green; display:none;"></p>
+</div>
+
+<script>
+document.getElementById('orderForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    // НАСТРОЙКА: Вставь свои данные сюда внутри кавычек
+    const TELEGRAM_TOKEN = 'СЮДА_ВСТАВЬ_ТОКЕН_ОТ_BOTFATHER';
+    const CHAT_ID = 'СЮДА_ВСТАВЬ_ТВОЙ_ID_ИЗ_ШАГА_1';
+
+    const name = document.getElementById('name').value;
+    const phone = document.getElementById('phone').value;
+    const product = document.getElementById('product').value;
+
+    // Формируем красивый текст сообщения для админа
+    const text = `🛍 Новый заказ в Black Shine!\n\n👤 Имя: ${name}\n📞 Телефон: ${phone}\n📦 Заказ: ${product}`;
+
+    // Отправляем запрос в Telegram API
+    const url = `https://telegram.org{TELEGRAM_TOKEN}/sendMessage`;
+    
+    fetch(url, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+            chat_id: CHAT_ID,
+            text: text
+        })
+    })
+    .then(response => {
+        if (response.ok) {
+            const status = document.getElementById('statusMessage');
+            status.textContent = 'Спасибо! Заказ успешно отправлен.';
+  <div style="max-width: 400px; margin: 20px auto; padding: 20px; border: 1px solid #ccc; border-radius: 8px; font-family: sans-serif;">
+    <h3>Оформить заказ в Black Shine</h3>
+    <form id="orderForm">
+        <label style="display:block; margin-bottom:5px;">Ваше имя:</label>
+        <input type="text" id="name" required style="width:100%; padding:8px; margin-bottom:15px; box-sizing:border-box;">
+
+        <label style="display:block; margin-bottom:5px;">Номер телефона:</label>
+        <input type="tel" id="phone" required style="width:100%; padding:8px; margin-bottom:15px; box-sizing:border-box;">
+
+        <label style="display:block; margin-bottom:5px;">Что хотите заказать:</label>
+        <textarea id="product" required style="width:100%; padding:8px; margin-bottom:15px; box-sizing:border-box; height:8px0px;"></textarea>
+
+        <button type="submit" style="width:100%; padding:10px; background:#000; color:#fff; border:none; border-radius:4px; cursor:pointer;">Отправить заказ</button>
+    </form>
+    <p id="statusMessage" style="margin-top:15px; font-weight:bold; color:green; display:none;"></p>
+</div>
+
+<script>
+document.getElementById('orderForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    // НАСТРОЙКА: Вставь свои данные сюда внутри кавычек
+    const TELEGRAM_TOKEN = '9195486263: AAGZVaN2w-9we80er0kMfRH
+rn1oBhPw_f1o';
+    const CHAT_ID = '5112157778';
+
+    const name = document.getElementById('name').value;
+    const phone = document.getElementById('phone').value;
+    const product = document.getElementById('product').value;
+
+    // Формируем красивый текст сообщения для админа
+    const text = `🛍 Новый заказ в Black Shine!\n\n👤 Имя: ${name}\n📞 Телефон: ${phone}\n📦 Заказ: ${product}`;
+
+    // Отправляем запрос в Telegram API
+    const url = `https://telegram.org{TELEGRAM_TOKEN}/sendMessage`;
+    
+    fetch(url, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+            chat_id: CHAT_ID,
+            text: text
+        })
+    })
+    .then(response => {
+        if (response.ok) {
+            const status = document.getElementById('statusMessage');
+            status.textContent = 'Спасибо! Заказ успешно отправлен.';
+            status.style.display = 'block';
+            document.getElementById('orderForm').reset();
+        } else {
+            alert('Ошибка при отправке заказа. Проверьте токен или ID.');
+        }
+    })
+    .catch(error => {
+        console.error('Ошибка:', error);
+        alert('Произошла ошибка сети.');
+    });
+});
+
 </body>
 </html>
